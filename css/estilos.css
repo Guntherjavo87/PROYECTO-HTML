@@ -19,7 +19,7 @@ h2 {
 
 /* Header */
 header {
-    background-color: #EDDFE0;
+    background-color: #E7CCCC;
     padding: 1rem;
     text-align: center;
     border-radius: 10px;
@@ -74,35 +74,48 @@ nav ul li a {
     width: 100%;
     border-radius: 5px;
 }
+    
 
-/* Reseñas */
-.reseñas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
+#reseñas {
+    background-color:#C1CFA1 ; /* Color de fondo de la sección */
+    padding: 20px; /* Espacio alrededor de la sección */
+    border-radius: 10px; /* Bordes redondeados */
     margin: 20px;
 }
 
-.reseña-card {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 15px;
-    text-align: center;
+.reseñas-grid {
+    display: grid; /* Activa CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Distribuye las columnas */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px 0; /* Espacio interno */
 }
+
+.reseña-card {
+    background-color: #ffffff; /* Fondo de cada tarjeta */
+    padding: 10px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de profundidad */
+    text-align: center; /* Centra el contenido de cada tarjeta */
+}
+
+.reseña-card iframe {
+    width: 100%; /* Asegura que los videos se adapten al tamaño de la tarjeta */
+    height: auto; /* Mantiene la proporción del video */
+    border-radius: 5px; /* Bordes redondeados para los videos */
+}
+
 
 /* Contacto */
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
     align-items: center;
-    padding: ;
-    gap: 0.5rem;
-    max-width: ;
-    margin: 1rem auto; 
     border-radius: 10px; 
-    width: 100%;
+    width: 90%;
+    background-color: #C1CFA1;
+    margin: 60px;
 }
 
 section#contacto input{
@@ -123,14 +136,13 @@ section#contacto textarea{
     resize: vertical; /* Permite al usuario redimensionar verticalmente */
 }
 
-section#reseñas{
-    background-color: #EDE8DC;
-}
-section#contacto {
-    background-color: #C1CFA1; /* Azul claro */
-    border-radius: 10px;
-    margin: 20px;
-}
+/*section#reseñas{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: #EDE8DC;*/
+
+
 
 
 /* Footer */
