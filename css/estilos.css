@@ -1,0 +1,149 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes y Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #EDE8DC;
+
+}
+h2 {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+/* Header */
+header {
+    background-color: #EDDFE0;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 10px;
+    margin: 20px;
+    
+}
+main{
+    background-color: #EDE8DC;
+}
+/* Navegación */
+nav ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    background-color: #343a40;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Productos */
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1.5rem;
+    text-align: center;
+    background-color: #C1CFA1;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.producto-card {
+    background-color: #e9ecef;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.producto-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Reseñas */
+.reseñas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.reseña-card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* Contacto */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: ;
+    gap: 0.5rem;
+    max-width: ;
+    margin: 1rem auto; 
+    border-radius: 10px; 
+    width: 100%;
+}
+
+section#contacto input{
+    width: 20%;
+    border-radius: 10px;
+}
+
+section#contacto textarea{
+    
+    width: 90%; /* Ocupa todo el ancho del contenedor */
+    height: 150px; /* Altura específica para el textarea */
+    padding: 12px; /* Espacio interno más grande */
+    margin: 20px;
+    margin-bottom: 15px; /* Espacio inferior entre los campos */
+    border: 1px solid #ccc; /* Borde */
+    border-radius: 10px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente más grande */
+    resize: vertical; /* Permite al usuario redimensionar verticalmente */
+}
+
+section#reseñas{
+    background-color: #EDE8DC;
+}
+section#contacto {
+    background-color: #C1CFA1; /* Azul claro */
+    border-radius: 10px;
+    margin: 20px;
+}
+
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}
