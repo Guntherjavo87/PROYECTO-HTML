@@ -47,8 +47,8 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-size: 20px; /* Cambia el tamaño del icono */
 }
-
 #carrito {
     background-color: #E7CCCC; /* Fondo claro para la sección */
     padding: 20px; /* Espacio alrededor de la sección */
