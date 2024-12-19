@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,8 +8,22 @@
     <link rel="stylesheet" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    
+    <style>
+        #mapa-ubicacion {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        #mapa-ubicacion iframe {
+            width: 80%;
+            height: 400px;
+            border: none;
+        }
+    </style>
+
+
 </head>
 <body>
 
@@ -33,126 +48,77 @@
 
         <section id="carrito">
             <h2>Carrito de Compras</h2>
-            <div class="carrito-container">
-                <!-- Producto 1 -->
-                <div class="carrito-item">
-                    <img src="imagenes/imag1.jpg" alt="Producto 1" class="producto-imagen">
-                    <div class="producto-detalles">
-                        <h3>Producto 1</h3>
-                        <p>Cantidad: 1</p>
-                        <p>Precio: $20.00</p>
-                    </div>
-                    <div class="producto-precio">
-                        $20.00
-                    </div>
-                </div>
-                
-                <!-- Producto 2 -->
-                <div class="carrito-item">
-                    <img src="imagenes/imag2.jpg" alt="Producto 2" class="producto-imagen">
-                    <div class="producto-detalles">
-                        <h3>Producto 2</h3>
-                        <p>Cantidad: 2</p>
-                        <p>Precio: $15.00</p>
-                    </div>
-                    <div class="producto-precio">
-                        $30.00
-                    </div>
-                </div>
-        
-                <!-- Total -->
-                <div class="carrito-total">
-                    <h3>Total: $50.00</h3>
-                    <button>Proceder al Pago</button>
-                </div>
+            <div id="carrito-container" class="carrito-container">
+                <p>Tu carrito está vacío.</p>
+            </div>
+            <div id="carrito-total" class="carrito-total">
+                <h3>Total: $0.00</h3>
+                <button id="vaciar-carrito">Vaciar Carrito</button>
+                <button id="finalizar-compra" style="background-color: #28a745; color: white; padding: 10px 20px; margin-top: 10px; border: none; border-radius: 5px; cursor: pointer;">
+                    Finalizar Compra
+                </button>
             </div>
         </section>
-        
-
-
-
 
         <!-- Sección de Productos -->
-        <section id="productos">
-            <h2>Productos Destacados</h2>
-            <div class="productos-container">
-                <!-- Card de Producto -->
-                      <div class="producto-card">
-                          <img src="imagenes/imagen1.jpg" alt="Producto 1">
-                          <h3>Producto 1</h3>
-                          <p>Descripción breve del producto 1.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen2.jpg" alt="Producto 2">
-                          <h3>Producto 2</h3>
-                          <p>Descripción breve del producto 2.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen3.jpg" alt="Producto 3">
-                          <h3>Producto 3</h3>
-                          <p>Descripción breve del producto 3.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen4.jpg" alt="Producto 4">
-                          <h3>Producto 4</h3>
-                          <p>Descripción breve del producto 4.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen5.jpg" alt="Producto 5">
-                          <h3>Producto 5</h3>
-                          <p>Descripción breve del producto 5.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen6.jpg" alt="Producto 6">
-                          <h3>Producto 6</h3>
-                          <p>Descripción breve del producto 6.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen7.jpg" alt="Producto 7">
-                          <h3>Producto 7</h3>
-                          <p>Descripción breve del producto 7.</p>
-                      </div>
-                      <div class="producto-card">
-                          <img src="imagenes/imagen8.jpg" alt="Producto 8">
-                          <h3>Producto 8</h3>
-                          <p>Descripción breve del producto 8.</p>
-                      </div>
-                      <div class="producto-card">
-                        <img src="imagenes/imagen9.jpg" alt="Producto 10">
-                        <h3>Producto 9</h3>
-                        <p>Descripción breve del producto 9.</p>
-                    </div>
-                    <div class="producto-card">
-                        <img src="imagenes/imagen10.jpg" alt="Producto 10">
-                        <h3>Producto 10</h3>
-                        <p>Descripción breve del producto 10.</p>
-                    </div>
-                  </div>
-              </section>
-              
-                <!-- Repite más cards aquí según necesites -->
+<section id="productos">
+    <h2>Productos Destacados</h2>
+    <div class="productos-container">
+        <!-- Card de Producto -->
+        <div class="producto-card" data-id="1" data-nombre="Producto 1" data-precio="20.00">
+            <img src="imagenes/imagen1.jpg" alt="Producto 1">
+            <h3>Producto 1</h3>
+            <p>Descripción breve del producto 1.</p>
+            <button class="btn-descripcion">Ver descripción</button>
+            <button class="btn-agregar">Añadir al carrito</button>
+        </div>
+        <div class="producto-card" data-id="2" data-nombre="Producto 2" data-precio="15.00">
+            <img src="imagenes/imagen2.jpg" alt="Producto 2">
+            <h3>Producto 2</h3>
+            <p>Descripción breve del producto 2.</p>
+            <button class="btn-descripcion">Ver descripción</button>
+            <button class="btn-agregar">Añadir al carrito</button>
+        </div>
+        <div class="producto-card" data-id="3" data-nombre="Producto 3" data-precio="25.00">
+            <img src="imagenes/imagen3.jpg" alt="Producto 3">
+            <h3>Producto 3</h3>
+            <p>Descripción breve del producto 3.</p>
+            <button class="btn-descripcion">Ver descripción</button>
+            <button class="btn-agregar">Añadir al carrito</button>
+        </div>
+        <div class="producto-card" data-id="4" data-nombre="Producto 4" data-precio="30.00">
+            <img src="imagenes/imagen4.jpg" alt="Producto 4">
+            <h3>Producto 4</h3>
+            <p>Descripción breve del producto 4.</p>
+            <button class="btn-descripcion">Ver descripción</button>
+            <button class="btn-agregar">Añadir al carrito</button>
+        </div>
+    </div>
+</section>
+
+                   
+                <!-- Más productos hasta el 10, con estructura similar -->
             </div>
         </section>
 
         <!-- Sección de Reseñas -->
-
         <section id="reseñas"> 
-          <h2>Reseñas de Clientes</h2>
-          <div class="reseñas-grid">
-              <div class="reseña-card">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID1" title="Reseña Video 1" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="reseña-card">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID2" title="Reseña Video 2" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="reseña-card">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID3" title="Reseña Video 3" frameborder="0" allowfullscreen></iframe>
-              </div>
-              <div class="reseña-card">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID4" title="Reseña Video 4" frameborder="0" allowfullscreen></iframe>
-              </div>
-          </div>
-      </section>
+            <h2>Reseñas de Clientes</h2>
+            <div class="reseñas-grid">
+                <div class="reseña-card">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID1" title="Reseña Video 1" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="reseña-card">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID2" title="Reseña Video 2" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="reseña-card">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID3" title="Reseña Video 3" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="reseña-card">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/videoID4" title="Reseña Video 4" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
 
         <!-- Sección de Contacto -->
         <section id="contacto">
@@ -170,6 +136,14 @@
                 <button type="submit">Enviar</button>
             </form>
         </section>
+        <!-- Mapa de Ubicación -->
+        <section id="mapa-ubicacion">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.1284661829775!2d-122.08424968421125!3d37.422065979826024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b3d12c5bbd%3A0x2b1b07f3be26c7d5!2sGoogleplex!5e0!3m2!1sen!2sus!4v1642431476731!5m2!1sen!2sus"
+                allowfullscreen=""
+                loading="lazy"
+            ></iframe>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -177,5 +151,105 @@
         <p>&copy; 2023 Tienda de Ropa para Mujeres. Todos los derechos reservados.</p>
     </footer>
 
+    <script>
+        const productos = document.querySelectorAll('.producto-card');
+        const carritoContainer = document.getElementById('carrito-container');
+        const carritoTotal = document.getElementById('carrito-total');
+        const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+        function actualizarCarrito() {
+            carritoContainer.innerHTML = '';
+            if (carrito.length === 0) {
+                carritoContainer.innerHTML = '<p>Tu carrito está vacío.</p>';
+                carritoTotal.querySelector('h3').textContent = 'Total: $0.00';
+                return;
+            }
+
+            let total = 0;
+            carrito.forEach(producto => {
+                const item = document.createElement('div');
+                item.classList.add('carrito-item');
+                item.innerHTML = `
+                    <h3>${producto.nombre}</h3>
+                    <p>Cantidad: <input type="number" min="1" value="${producto.cantidad}" class="cantidad-input"></p>
+                    <p>Precio: $${producto.precio}</p>
+                    <button class="btn-eliminar">Eliminar</button>
+                `;
+
+                total += producto.cantidad * producto.precio;
+                carritoContainer.appendChild(item);
+
+                item.querySelector('.cantidad-input').addEventListener('change', e => {
+                    producto.cantidad = parseInt(e.target.value);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+
+                item.querySelector('.btn-eliminar').addEventListener('click', () => {
+                    carrito = carrito.filter(p => p.id !== producto.id);
+                    localStorage.setItem('carrito', JSON.stringify(carrito));
+                    actualizarCarrito();
+                });
+            });
+
+            carritoTotal.querySelector('h3').textContent = `Total: $${total.toFixed(2)}`;
+        }
+
+        productos.forEach(producto => {
+            producto.querySelector('.btn-agregar').addEventListener('click', () => {
+                const id = parseInt(producto.dataset.id);
+                const nombre = producto.dataset.nombre;
+                const precio = parseFloat(producto.dataset.precio);
+
+                const existente = carrito.find(p => p.id === id);
+                if (existente) {
+                    existente.cantidad++;
+                } else {
+                    carrito.push({ id, nombre, precio, cantidad: 1 });
+                }
+
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                actualizarCarrito();
+            });
+
+            producto.querySelector('.btn-descripcion').addEventListener('click', () => {
+                alert(`Descripción ampliada de ${producto.dataset.nombre}: Lorem ipsum dolor sit amet, consectetur adipiscing elit.`);
+            });
+        });
+
+        vaciarCarritoBtn.addEventListener('click', () => {
+            carrito = [];
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarCarrito();
+        });
+
+        actualizarCarrito();
+    </script>
+    <script>
+        const finalizarCompraBtn = document.getElementById('finalizar-compra');
+    
+        finalizarCompraBtn.addEventListener('click', () => {
+            if (carrito.length === 0) {
+                alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
+                return;
+            }
+    
+            let mensaje = 'Has finalizado tu compra con los siguientes productos:\n\n';
+            carrito.forEach(producto => {
+                mensaje += `- ${producto.nombre} (Cantidad: ${producto.cantidad}, Precio: $${producto.precio})\n`;
+            });
+    
+            const total = carrito.reduce((acc, producto) => acc + producto.cantidad * producto.precio, 0);
+            mensaje += `\nTotal a pagar: $${total.toFixed(2)}`;
+            alert(mensaje);
+    
+            // Vaciar el carrito después de finalizar la compra
+            carrito = [];
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            actualizarCarrito();
+        });
+    </script>
+    
 </body>
 </html>
